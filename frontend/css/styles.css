@@ -1,0 +1,100 @@
+/* --------- Fuentes --------- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@600;800&family=Prompt:wght@600;700&display=swap');
+
+/* --------- Variables Globales --------- */
+:root {
+    --color-y2k-r: #e48484;        
+    --color-y2k-a: #7dc5bf;        
+    --color-y2k-v: #1ef775;        
+    --color-naranja: #f0b570;
+    --color-amarillo: #fadf7b;
+    --color-azul-acero: #7592a6;
+    --color-gris-arena: #c7c2b8;
+
+    /* Roles de Tipografías */
+    --font-cuerpo: 'Barlow', sans-serif;
+    --font-encabezados: 'Prompt', sans-serif;
+    --font-hud: 'JetBrains Mono', monospace;
+    --font-nav: 'Orbitron', sans-serif; 
+
+    /* Configuración de Tema por Defecto (Modo Claro) */
+    --bg-principal: #ffffff;
+    --texto-principal: #212529;
+    --texto-secundario: #555555;
+    --nav-bg: var(--color-gris-arena);
+    --btn-primario-bg: var(--color-azul-acero);
+    --btn-primario-texto: #ffffff;
+}
+
+/* Redefinición de variables para el Modo Oscuro */
+body.dark-mode {
+    --bg-principal: #121212;
+    --texto-principal: #f8f9fa;
+    --texto-secundario: #c7c2b8;
+    --nav-bg: #1a1a1a;
+    --btn-primario-bg: var(--color-azul-acero);
+}
+
+/* --------- Estilo Base --------- */
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    font-family: var(--font-cuerpo); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Barlow aplicado explícitamente a elementos de entrada */
+input, textarea, select, button {
+    font-family: var(--font-cuerpo);
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-encabezados);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   4. CLASES UTILITARIAS Y COMPONENTES CUSTOM
+   ========================================================================== */
+/* Tipografías específicas */
+.fuente-nav {
+    font-family: var(--font-nav) !important;
+    letter-spacing: 1px;
+}
+
+.fuente-hud {
+    font-family: var(--font-hud) !important;
+}
+
+/* Colores de las letras individuales de Y2K */
+.letra-y { color: var(--color-y2k-r); }
+.letra-2 { color: var(--color-y2k-a); }
+.letra-k { color: var(--color-y2k-v); }
+
+.texto-market {
+    color: var(--texto-principal);
+    margin-left: 8px;
+}
+
+/* Navbar Personalizada */
+.bg-custom-nav {
+    background-color: var(--nav-bg) !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón Primario Custom */
+.btn-custom-primario {
+    background-color: var(--btn-primario-bg);
+    color: var(--btn-primario-texto);
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-custom-primario:hover {
+    background-color: var(--color-azul-acero);
+    filter: brightness(1.1);
+    color: #ffffff;
+}
+.btn-custom-primario:active {
+    transform: scale(0.98);
+}

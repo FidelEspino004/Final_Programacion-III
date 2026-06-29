@@ -1,0 +1,38 @@
+/* Contenedor principal con la imagen de fondo fluida de izquierda a derecha */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                      url('../img/bienbenidafondo.webp'); 
+    background-size: cover;          /* Estira la imagen para cubrir todo el ancho y alto disponible */
+    background-position: center;     /* Centra la imagen para evitar recortes extraños */
+    background-repeat: no-repeat;    /* Evita que la imagen se duplique */
+    padding: 60px 0;
+}
+
+/* Tarjeta translúcida estilo "Glassmorphism" para ingresar el nombre */
+.card-bienvenida {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Adaptación de la card al modo oscuro para que combine de 10 */
+body.dark-mode .card-bienvenida {
+    background-color: rgba(26, 26, 26, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Estilo para los textos internos de la sección de bienvenida */
+.card-bienvenida h1 {
+    color: #121212;
+}
+body.dark-mode .card-bienvenida h1 {
+    color: #f8f9fa;
+}
+
+.text-muted-custom {
+    color: #555555;
+}
+body.dark-mode .text-muted-custom {
+    color: #c7c2b8;
+}
