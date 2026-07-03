@@ -1,20 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const darkModeToggle = document.getElementById('darkmode-toggle');
-    const temaGuardado = localStorage.getItem('theme'); 
+document.addEventListener("DOMContentLoaded",()=>{
 
-    if (temaGuardado === 'dark') {
-        document.body.classList.add('dark-mode');
-        if (darkModeToggle) darkModeToggle.checked = true; 
-    }
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('change', () => {
-            if (darkModeToggle.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark'); 
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
+    const toggle=document.getElementById("darkmode-toggle");
+
+    const tema=localStorage.getItem("theme") || "light";
+
+    document.documentElement.setAttribute("data-bs-theme",tema);
+
+    toggle.checked=tema==="dark";
+
+    toggle.addEventListener("change",()=>{
+
+        const nuevoTema=toggle.checked ? "dark":"light";
+
+        document.documentElement.setAttribute("data-bs-theme",nuevoTema);
+
+        localStorage.setItem("theme",nuevoTema);
+
+    });
+
 });
