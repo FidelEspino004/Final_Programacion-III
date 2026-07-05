@@ -1,0 +1,113 @@
+/* ===== WRAPPER DEL TICKET ===== */
+.ticket-wrapper {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    font-family: var(--font-hud);
+}
+
+body.dark-mode .ticket-wrapper {
+    background-color: #1e1e1e;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== ENCABEZADO ===== */
+.ticket-marca {
+    font-family: var(--font-nav);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.ticket-subtitulo {
+    font-family: var(--font-cuerpo);
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ticket-meta {
+    font-family: var(--font-cuerpo);
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+}
+
+/* ===== DIVISOR ===== */
+.ticket-divisor {
+    border-color: rgba(0, 0, 0, 0.1);
+    margin: 16px 0;
+}
+
+body.dark-mode .ticket-divisor {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== CUERPO ===== */
+.ticket-body {
+    margin: 16px 0;
+}
+
+.ticket-seccion-titulo {
+    font-family: var(--font-cuerpo);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--texto-secundario);
+    margin-bottom: 12px;
+}
+
+/* ===== ITEMS ===== */
+.ticket-item {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .ticket-item {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.ticket-item:last-child {
+    border-bottom: none;
+}
+
+.ticket-item-nombre {
+    font-family: var(--font-cuerpo);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.ticket-item-cantidad {
+    font-family: var(--font-hud);
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+}
+
+.ticket-item-precio {
+    font-family: var(--font-hud);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-azul-acero);
+}
+
+/* ===== TOTAL ===== */
+.ticket-total-label {
+    font-family: var(--font-encabezados);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ticket-total-precio {
+    font-family: var(--font-hud);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-azul-acero);
+}
+
+/* ===== OCULTAR BOTONES EN PDF ===== */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}

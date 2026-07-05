@@ -3,6 +3,18 @@ let carrito = [];
 document.addEventListener("DOMContentLoaded", () => {
     carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     cargarCarrito();
+    actualizarContador();
+
+    const btnFinalizar = document.getElementById("btn-finalizar");
+    if (btnFinalizar) {
+        btnFinalizar.addEventListener("click", () => {
+            if (carrito.length === 0) {
+                alert("El carrito está vacío.");
+                return;
+            }
+            window.location.href = "ticket.html";
+        });
+    }
 });
 
 // ===== Guardar carrito =====
@@ -36,6 +48,7 @@ function agregarAlCarrito(producto) {
     }
 
     guardarCarrito();
+    actualizarContador();
 }
 
 // ===== Mostrar carrito =====
@@ -143,15 +156,42 @@ function restarCantidad(id) {
 // ===== Actualizar total =====
 function actualizarTotal(total) {
     const totalHTML = document.getElementById("precioTotal");
+    const cantidadHTML = document.getElementById("cantidadProductos");
+
+    const totalNumero = parseFloat(total) || 0;
 
     if (totalHTML) {
-        totalHTML.textContent = "$" + total.toFixed(2);
+        totalHTML.textContent = "$" + totalNumero.toLocaleString("es-AR");
     }
 
+    if (cantidadHTML) {
+        let detalleHTML = "";
+
+        for (let i = 0; i < carrito.length; i++) {
+            detalleHTML += `
+                <div class="d-flex justify-content-between mb-2 small">
+                    <span class="text-truncate me-2">${carrito[i].nombre}</span>
+                    <span class="fw-bold text-nowrap">x${carrito[i].cantidad}</span>
+                </div>
+            `;
+        }
+
+        cantidadHTML.innerHTML = detalleHTML || "<span class='text-muted'>Sin productos</span>";
+    }
 }
 
 function vaciarCarrito() {
     carrito = [];
     guardarCarrito();
     cargarCarrito();
+}
+
+function actualizarContador() {
+    const contador = document.getElementById("contador-global");
+    if (!contador) return;
+    let total = 0;
+    for (let i = 0; i < carrito.length; i++) {
+        total += carrito[i].cantidad;
+    }
+    contador.textContent = total;
 }
