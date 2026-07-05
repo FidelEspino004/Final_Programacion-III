@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K Market - Productos</title>
+
+    <link rel="icon" href="../img/L.I.Store.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@600;800&family=Prompt:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+
+<body>
+
+<div class="d-flex flex-column min-vh-100">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand bg-body-tertiary border-bottom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold fs-3" href="../index.html">
+                <span class="letra-y">Y</span><span class="letra-2">2</span><span class="letra-k">K</span> Market
+            </a>
+
+            <div class="d-flex align-items-center gap-3 ms-auto">
+
+                <span id="saludo-usuario" class="text-body-secondary small"></span>
+
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkmode-toggle">
+                </div>
+
+                <a href="carrito.html" class="position-relative text-body-secondary fs-4">
+                    <i class="bi bi-cart"></i>
+
+                    <span id="contador-global" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0
+                    </span>
+
+                </a>
+
+                <a href="iniciarSesion.html" class="text-body-secondary fs-4"><i class="bi bi-person-circle"></i></a>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <div class="container-fluid flex-grow-1">
+        <div class="row h-100">
+            <!-- ================= CATEGORIAS ================= -->
+
+            <aside class="col-md-3 col-lg-2 categoria-panel order-2 order-md-1">
+                <h6 class="text-uppercase text-body-secondary mb-4">Categorías</h6>
+
+                <button id="btn-consolas" class="btn-categoria w-100 mb-3">
+                    <i class="bi bi-controller me-2"></i>
+                    Consolas
+                </button>
+
+                <button id="btn-reproductores" class="btn-categoria w-100">
+                    <i class="bi bi-music-player me-2"></i>
+                    Reproductores
+                </button>
+
+            </aside>
+
+            <!-- ================= PRODUCTOS ================= -->
+
+            <main class="col-md-9 col-lg-10 py-4 order-1 order-md-2">
+
+                <div id="texto-inicial" class="h-100 d-flex justify-content-center align-items-center">
+                    <div class="text-center">
+                        <i class="bi bi-hand-index-thumb display-3 opacity-50"></i>
+                        <h2 class="mt-3 text-body-secondary"> Seleccioná una categoría </h2>
+                    </div>
+                </div>
+
+                <div id="contenedor-productos" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 d-none"></div>
+
+            </main>
+        </div>
+    </div>
+
+</div>
+
+<script src="../js/cambiarTema.js"></script>
+<script src="../js/productos.js"></script>
+
+</body>
+</html>

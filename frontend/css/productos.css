@@ -1,0 +1,126 @@
+main{
+    overflow-y:auto;
+}
+
+/* ========== PANEL DE CATEGORÍAS ========== */
+
+.categoria-panel{
+    padding:2rem 1.5rem;
+    border-right:1px solid var(--bs-border-color);
+    background:var(--bs-body-bg);
+}
+
+/* ========== BOTONES DE CATEGORÍAS ========== */
+
+.btn-categoria{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:.75rem;
+    padding:.9rem 1rem;
+    border:2px solid var(--bs-border-color);
+    border-radius:.8rem;
+    background:transparent;
+    color:var(--bs-body-color);
+    font-weight:600;
+    transition:.25s;
+}
+
+.btn-categoria:hover{
+    background:var(--bs-secondary-bg);
+    border-color:var(--color-azul-acero);
+}
+
+.btn-categoria i{
+    font-size:1.2rem;
+}
+
+.btn-categoria.activo{
+    background:var(--color-azul-acero);
+    border-color:var(--color-azul-acero);
+    color:white;
+}
+
+.btn-categoria.activo i{
+    color:white;
+}
+
+/* ========== TEXTO INICIAL ========== */
+
+#texto-inicial{
+    min-height:70vh;
+}
+
+/* ========== TARJETAS ========== */
+
+.producto-card{
+    border-radius:1rem;
+    overflow:hidden;
+    transition:.2s;
+    cursor:pointer;
+}
+
+.producto-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+/* ========== IMÁGENES ========== */
+
+.producto-img,
+.producto-img-placeholder{
+    height:220px;
+    object-fit:cover;
+}
+
+.producto-img-placeholder{
+    background:var(--bs-secondary-bg);
+}
+
+
+.precio{
+    color:var(--color-azul-acero);
+    font-size:1.15rem;
+}
+
+.btn-ojo{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.9);
+    transition:.2s;
+}
+
+.btn-ojo:hover{
+    transform:scale(1.08);
+}
+
+
+@media (max-width:767px){
+
+    .categoria-panel{
+        border-right:none;
+        border-top:1px solid var(--bs-border-color);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:1rem;
+        padding:1rem;
+    }
+
+    .categoria-panel h6{
+        display:none;
+    }
+
+    .btn-categoria{
+        justify-content:center;
+        margin:0;
+    }
+
+    #texto-inicial{
+        min-height:50vh;
+    }
+
+}
