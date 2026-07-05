@@ -95,10 +95,24 @@ function crearCard(producto) {
                 <div class="card-body text-center">
                     <h6 class="card-title fw-bold mb-1">${producto.nombre}</h6>
                     <p class="precio fw-bold mb-0">${precioFormateado}</p>
+                <div class="mt-auto d-flex justify-content-end">
+                    <button class="btn btn-primary" onclick="agregarAlCarrito(productoPorId(${producto.id}))">
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                </div>
                 </div>
             </div>
         </div>
     `;
+}
+
+function productoPorId(id) {
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i].id === id) {
+            return productos[i];
+        }
+    }
+    return null;
 }
 
 function verDetalle(id) {
